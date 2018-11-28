@@ -30,10 +30,5 @@
     "mdx-deck": "^1.8.1",
     "mdx-deck-code-surfer": "^0.5.3",
     "raw-loader": "^0.5.1"
-  },
-  "dependencies": {
-    "@rebass/grid": "^6.0.0-4",
-    "spectacle": "^5.2.2",
-    "spectacle-code-slide": "^0.5.2"
   }
 }
