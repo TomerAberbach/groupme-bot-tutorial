@@ -1,6 +1,8 @@
-export { swiss as theme } from 'mdx-deck/themes'
-import { CodeSurfer } from "mdx-deck-code-surfer"
-import { Split } from 'mdx-deck/layouts'
+export { default as theme } from './theme'
+
+import { Image } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+import oceanicNext from 'prism-react-renderer/themes/oceanicNext'
 
 # Making a GroupMe Bot With Node.js and Heroku
 
@@ -8,14 +10,331 @@ import { Split } from 'mdx-deck/layouts'
 
 ---
 
-# Step One
+# Fork the Repository
 
-## Clone
+[github.com/TomerAberbach/groupme-bot-tutorial](https://github.com/TomerAberbach/groupme-bot-tutorial)
 
-```sh
-$ git clone 
+Press the "Fork" button on the top-right.
+
+![](img/fork.png)
+
+---
+
+# Sign Up For Heroku
+
+We'll be running our code on their servers.
+
+[signup.heroku.com/login](https://signup.heroku.com/login)
+
+![](img/signup.png)
+
+---
+
+# Create an App
+
+[dashboard.heroku.com](https://dashboard.heroku.com/apps)
+
+Click on 'Create new app'.
+
+![](img/create-app-1.png)
+
+---
+
+# Create an App
+
+Give your app a name, then click on 'Create app'.
+
+![](img/create-app-2.png)
+
+---
+
+# Connect to GitHub
+
+Click on the GitHub icon.
+
+![](img/connect-github-1.png)
+
+---
+
+# Connect to GitHub
+
+Click on 'Connect to GitHub' and follow the prompts.
+
+![](img/connect-github-2.png)
+
+---
+
+# Connect the Repository
+
+Type 'groupme-bot-tutorial' into the search bar, then press enter.
+
+![](img/connect-repository-1.png)
+
+---
+
+# Connect the Repository
+
+Click on 'Connect' for the repository you forked.
+
+![](img/connect-repository-2.png)
+
+---
+
+# Go to Settings
+
+Click on 'Settings'. 
+
+![](img/settings.png)
+
+---
+
+# Edit Configuration Variables
+
+Click on 'Reveal Config Vars'.
+
+![](img/config-vars.png)
+
+---
+
+# Login to GroupMe Development
+
+In a separate tab: [dev.groupme.com/session/new](https://dev.groupme.com/session/new)
+
+Then sign in with your GroupMe credentials.
+
+![](img/get-access-token-1.png)
+
+---
+
+# Get Your GroupMe Access Token
+
+Click on 'Access Token', and then copy your access token from the pop-up.
+
+![](img/get-access-token-2.png)
+
+---
+
+# Set Your GroupMe Access Token
+
+Back in Heroku, type 'ACCESS_TOKEN' in the first 'VALUE' box.
+
+![](img/set-access-token-1.png)
+
+---
+
+# Set Your GroupMe Access Token
+
+Paste your copied access token in the second 'VALUE' box.
+
+![](img/set-access-token-2.png)
+
+---
+
+# Set Your GroupMe Access Token
+
+Click on 'Add'.
+
+![](img/set-access-token-3.png)
+
+---
+
+# Register Your GroupMe Bot
+
+Scroll down the page and copy your domain URL.
+
+![](img/register-bot-1.png)
+
+---
+
+# Register Your GroupMe Bot
+
+Back in GroupMe Development, click on 'Bots'.
+
+![](img/register-bot-2.png)
+
+---
+
+# Register Your GroupMe Bot
+
+Click on 'Create Bot'.
+
+![](img/register-bot-3.png)
+
+---
+
+# Register Your GroupMe Bot
+
+Paste your copied domain URL in the 'Callback URL' box.
+
+![](img/register-bot-4.png)
+
+---
+
+# Register Your GroupMe Bot
+
+Click on 'Submit'.
+
+![](img/register-bot-5.png)
+
+---
+
+# Get Your Bot ID
+
+Click on the bot you just created in the 'Bot' menu.
+
+---
+
+# Get Your Bot ID
+
+Copy your bot ID.
+
+![](img/get-bot-id.png)
+
+---
+
+# Set Your Bot ID
+
+Back in Heroku, type 'BOT_ID' in the next available 'VALUE' box.
+
+![](img/set-bot-id-1.png)
+
+---
+
+# Set Your Bot ID
+
+Paste your copied bot ID in the second 'VALUE' box.
+
+![](img/set-bot-id-2.png)
+
+---
+
+# Set Your Bot ID
+
+Click on 'Add'.
+
+![](img/set-bot-id-3.png)
+
+---
+
+# Deploy Your Bot
+
+Click on 'Deploy'.
+
+![](img/deploy-1.png)
+
+---
+
+# Deploy Your Bot
+
+Click on 'Deploy Branch'.
+
+![](img/deploy-2.png)
+
+---
+
+# Test the Bot
+
+Send the following message in the GroupMe chat containing your bot:
+
+```
+I have mixed feelings about bots...
 ```
 
-## Or Download
+And observe the result!
 
-## This Repository From GitHub
+---
+
+# What Did We Deploy?
+
+Let's first identify the actors involved.
+
+---
+
+# The Situation
+
+We need to understand how our code will interact with GroupMe and its users.
+
+---
+
+<Image src="img/situation/1.svg" />
+
+---
+
+<Image src="img/situation/2.svg" />
+
+---
+
+<Image src="img/situation/3.svg" />
+
+---
+
+<Image src="img/situation/4.svg" />
+
+---
+
+<Image src="img/situation/5.svg" />
+
+---
+
+# What is a Request?
+
+Requests serve as a way for a *client* and a *server* to interact.
+
+The client *sends* the request and the server *responds* to it.
+
+---
+
+# Our Server Will Play Both Roles
+
+When GroupMe passes along a message from the user, it will be the client and our server will be the server.
+
+When our server sends a response to GroupMe, GroupMe will be the server and our server will play the part of the client.
+
+---
+
+<CodeSurfer
+  title="bot.js"
+  code={require("!raw-loader!../bot.js")}
+  theme={oceanicNext}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { range: [1, 2] },
+    { range: [4, 52] },
+    { range: [4, 17] },
+    { range: [18, 51] },
+    { range: [54, 94] },
+    { range: [54, 79] },
+    { range: [80, 93] },
+    { range: [96, 99] }
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="server.js"
+  code={require("!raw-loader!../server.js")}
+  theme={oceanicNext}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { range: [1, 2] },
+    { range: [3, 5] },
+    { range: [7, 24] },
+    { range: [25, 30] },
+    { range: [85, 94] },
+    { range: [31, 37] },
+    { range: [39, 52] },
+    { range: [39, 46] },
+    { range: [47, 51] },
+    { range: [54, 83] },
+    { range: [54, 59] },
+    { range: [60, 67] },
+    { range: [69, 77] },
+    { range: [79, 82] },
+    { range: [98, 104] }
+  ]}
+/>
