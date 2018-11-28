@@ -1,0 +1,34 @@
+{
+  "name": "groupme-bot-tutorial-slides",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Tomer Aberbach <tomeraberbach@gmail.com> (https://tomeraberba.ch)",
+  "description": "A presentation for the heavily commented GroupMe bot implementation intended for running on Heroku.",
+  "keywords": [
+    "groupme",
+    "bot",
+    "tutorial",
+    "heroku",
+    "mdx",
+    "presentation"
+  ],
+  "homepage": "https://github.com/TomerAberbach/groupme-bot-tutorial",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomerAberbach/groupme-bot-tutorial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TomerAberbach/groupme-bot-tutorial/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "pdf": "mdx-deck pdf deck.mdx"
+  },
+  "devDependencies": {
+    "mdx-deck": "^1.8.1",
+    "mdx-deck-code-surfer": "^0.5.3",
+    "raw-loader": "^0.5.1"
+  }
+}

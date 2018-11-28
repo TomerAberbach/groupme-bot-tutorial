@@ -1,0 +1,30 @@
+{
+  "name": "groupme-bot-tutorial",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Tomer Aberbach <tomeraberbach@gmail.com> (https://tomeraberba.ch)",
+  "description": "A heavily commented GroupMe bot implementation intended for running on Heroku.",
+  "keywords": [
+    "groupme",
+    "bot",
+    "tutorial",
+    "heroku"
+  ],
+  "homepage": "https://github.com/TomerAberbach/groupme-bot-tutorial",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomerAberbach/groupme-bot-tutorial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TomerAberbach/groupme-bot-tutorial/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "server.js",
+    "bots.js"
+  ],
+  "main": "server.js",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
