@@ -256,23 +256,23 @@ We need to understand how our code will interact with GroupMe and its users.
 
 ---
 
-<Image src="img/situation/1.svg" />
+<Image src="img/situation/1.svg" width="90vw" height="90vh" />
 
 ---
 
-<Image src="img/situation/2.svg" />
+<Image src="img/situation/2.svg" width="90vw" height="90vh" />
 
 ---
 
-<Image src="img/situation/3.svg" />
+<Image src="img/situation/3.svg" width="90vw" height="90vh" />
 
 ---
 
-<Image src="img/situation/4.svg" />
+<Image src="img/situation/4.svg" width="90vw" height="90vh" />
 
 ---
 
-<Image src="img/situation/5.svg" />
+<Image src="img/situation/5.svg" width="90vw" height="90vh" />
 
 ---
 
@@ -297,9 +297,10 @@ When our server sends a response to GroupMe, GroupMe will be the server and our 
   code={require("!raw-loader!../bot.js")}
   theme={oceanicNext}
   lang="javascript"
-  showNumbers={false}
+  showNumbers={true}
   dark={false}
   steps={[
+    { range: [1, 99] },
     { range: [1, 2] },
     { range: [4, 52] },
     { range: [4, 17] },
@@ -318,9 +319,10 @@ When our server sends a response to GroupMe, GroupMe will be the server and our 
   code={require("!raw-loader!../server.js")}
   theme={oceanicNext}
   lang="javascript"
-  showNumbers={false}
+  showNumbers={true}
   dark={false}
   steps={[
+    { range: [1, 104] },
     { range: [1, 2] },
     { range: [3, 5] },
     { range: [7, 24] },

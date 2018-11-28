@@ -24,7 +24,7 @@
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build": "mdx-deck build deck.mdx",
-    "pdf": "mdx-deck pdf deck.mdx"
+    "pdf": "mdx-deck pdf -d . --out-file slides.pdf deck.mdx"
   },
   "devDependencies": {
     "mdx-deck": "^1.8.1",
