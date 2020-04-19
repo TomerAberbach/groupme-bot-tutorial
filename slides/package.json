@@ -27,8 +27,8 @@
     "pdf": "mdx-deck pdf -d . --out-file slides.pdf deck.mdx"
   },
   "devDependencies": {
-    "mdx-deck": "^1.8.1",
-    "mdx-deck-code-surfer": "^0.5.3",
+    "mdx-deck": "^1.10.2",
+    "mdx-deck-code-surfer": "^0.5.5",
     "raw-loader": "^0.5.1"
   }
 }
